@@ -57,7 +57,7 @@ class PostController extends Controller
             $post->categories()->attach($request->categories);
         }
 
-        return redirect()->route('dashboard')->with('success', 'Post creado correctamente');
+        return redirect()->to('/dashboard')->with('success', 'Post creado correctamente');
     }
 
     public function edit(Post $post)
@@ -97,7 +97,7 @@ class PostController extends Controller
             $post->categories()->sync($request->categories);
         }
 
-        return redirect()->route('dashboard')->with('success', 'Post actualizado correctamente');
+        return redirect()->to('/dashboard')->with('success', 'Post actualizado correctamente');
     }
 
     public function destroy(Post $post)
